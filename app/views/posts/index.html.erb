@@ -1,1 +1,14 @@
-<%hello world%>
+<% if user_signed_in? %>
+  <%= current_user.email %> <br>
+  <%= link_to 'çıkış yap', destroy_user_session_path, method: :delete %> <br>
+<% else %>
+  <%= link_to 'üye ol', new_user_registration_path %> <br>
+  <%= link_to 'giriş yap', new_user_session_path %> <br>
+<% end %>
+
+<% @posts.each do |post| %>
+  <%= link_to post.title, post_path(post) %> <br>
+  <%= post.content %> <br>
+<% end %>
+
+<%= link_to "yeni post", new_post_path %>

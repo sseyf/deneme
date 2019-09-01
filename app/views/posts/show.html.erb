@@ -1,0 +1,5 @@
+<%= @post.title %> <br>
+<%= @post.content %> <br>
+
+<%= link_to "update", edit_post_path(@post) %>
+<%= link_to "sil", post_path(@post), method: :delete %>
